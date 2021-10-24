@@ -1,15 +1,26 @@
 /// <reference types="cypress" />
 
 describe('Articles', () => {
-  it('should add new', () => {
-    cy.visit('login');
-    cy.get('[placeholder=Email]').type('batatinha123@mail.com');
-    cy.get('[placeholder=Password]').type('batatinha123');
-    
-    cy.contains('button', 'Sign in').click();
-    
+  beforeEach(() => {
+    cy.request({
+      url: 'https://api.realworld.io/api/users/login',
+      method: 'POST',
+      body: {
+        "user": {
+          "email": 'batatinha123@mail.com',
+          "password": 'batatinha123',
+        },
+      },
+    }).then((response) => {
+      window.localStorage.setItem('jwtToken', response.body.user.token);
+    });
+
+    cy.visit('/');
+  });
+
+  it('should create a new article', () => {
     cy.get('[href*=editor]').click();
-    
+
     const articleTitle = 'Article Title' + new Date().getTime();
 
     cy.get('[ng-model$=title]').type(articleTitle);
@@ -21,6 +32,6 @@ describe('Articles', () => {
 
     cy.contains(articleTitle).should('be.visible');
 
-    cy.get('h1').should('have.text', articleTitle)
+    cy.get('h1').should('have.text', articleTitle);
   });
 });
