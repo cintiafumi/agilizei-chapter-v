@@ -2,18 +2,7 @@
 
 describe('Articles', () => {
   beforeEach(() => {
-    cy.request({
-      url: 'https://api.realworld.io/api/users/login',
-      method: 'POST',
-      body: {
-        "user": {
-          "email": 'batatinha123@mail.com',
-          "password": 'batatinha123',
-        },
-      },
-    }).then((response) => {
-      window.localStorage.setItem('jwtToken', response.body.user.token);
-    });
+    cy.login();
 
     cy.visit('/');
   });
