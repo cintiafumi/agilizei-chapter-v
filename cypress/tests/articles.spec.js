@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import articles from '../support/pages/articles'
+
 describe('Articles', () => {
   beforeEach(() => {
     cy.login();
@@ -8,19 +10,12 @@ describe('Articles', () => {
   });
 
   it('should create a new article', () => {
-    cy.get('[href*=editor]').click();
+    articles.accessForm()
 
-    const articleTitle = 'Article Title' + new Date().getTime();
+    articles.fillForm()
 
-    cy.get('[ng-model$=title]').type(articleTitle);
-    cy.get('[ng-model$=description]').type('Article description');
-    cy.get('[ng-model$=body]').type('Article body');
-    cy.get('[ng-model$=tagField]').type('cypress');
+    articles.submitForm()
 
-    cy.contains('button', 'Publish Article').click();
-
-    cy.contains(articleTitle).should('be.visible');
-
-    cy.get('h1').should('have.text', articleTitle);
+    articles.checkPublication()
   });
 });
