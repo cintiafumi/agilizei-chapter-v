@@ -1,0 +1,9 @@
+{
+  "user": {
+    "email": "batatinha123@mail.com",
+    "username": "Batatinha",
+    "bio": null,
+    "image": "https://realworld-temp-api.herokuapp.com/images/smiley-cyrus.jpeg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhdGF0aW5oYTEyM0BtYWlsLmNvbSIsInVzZXJuYW1lIjoiQmF0YXRpbmhhIiwiYmlvIjpudWxsLCJpbWFnZSI6Imh0dHBzOi8vcmVhbHdvcmxkLXRlbXAtYXBpLmhlcm9rdWFwcC5jb20vaW1hZ2VzL3NtaWxleS1jeXJ1cy5qcGVnIiwiaWF0IjoxNjM0ODQ1MzI1LCJleHAiOjE2NDAwMjkzMjV9.kVqCHcgzPFIg0DUCLR9e5nZJU5CNa3qwkCTSIt1ZjTU"
+  }
+}
