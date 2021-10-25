@@ -3,5 +3,5 @@ export const ELEMENTS = {
   inputTitle: '[ng-model$=title]',
   inputDescription: '[ng-model$=description]',
   inputBody: '[ng-model$=body]',
-  inputTag: '[ng-model$=tagField]',
-};
+  inputTag: '[ng-model$=tagField]'
+}

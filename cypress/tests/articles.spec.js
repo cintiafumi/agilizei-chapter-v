@@ -4,10 +4,10 @@ import articles from '../support/pages/articles'
 
 describe('Articles', () => {
   beforeEach(() => {
-    cy.login();
+    cy.login()
 
-    cy.visit('/');
-  });
+    cy.visit('/')
+  })
 
   it('should create a new article', () => {
     articles.accessForm()
@@ -17,5 +17,5 @@ describe('Articles', () => {
     articles.submitForm()
 
     articles.checkPublication()
-  });
-});
+  })
+})
